@@ -14,7 +14,7 @@ use std::sync::{
     atomic::{AtomicBool, Ordering},
     Arc,
 };
-use std::thread::{self, Thread};
+use sgx_tstd::thread::{self, SgxThread as Thread};
 
 /// A single-threaded task pool for polling futures to completion.
 ///
