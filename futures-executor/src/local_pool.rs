@@ -14,7 +14,10 @@ use std::sync::{
     atomic::{AtomicBool, Ordering},
     Arc,
 };
+#[cfg(feature = "phala-sgx")]
 use sgx_tstd::thread::{self, SgxThread as Thread};
+#[cfg(not(feature = "phala-sgx"))]
+use std::thread::{self, Thread};
 
 /// A single-threaded task pool for polling futures to completion.
 ///
